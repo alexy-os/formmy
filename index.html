@@ -1,0 +1,482 @@
+<html>
+  <head>
+    <title>FormmY - Form Builder</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="FormmY | Form Builder - Your perfect tool for creating accurate forms" />
+    <link rel="icon" type="image/svg" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzN2I5ZjMiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWxheW91dC10ZW1wbGF0ZSI+PHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjciIHg9IjMiIHk9IjMiIHJ4PSIxIi8+PHJlY3Qgd2lkdGg9IjkiIGhlaWdodD0iNyIgeD0iMyIgeT0iMTQiIHJ4PSIxIi8+PHJlY3Qgd2lkdGg9IjUiIGhlaWdodD0iNyIgeD0iMTYiIHk9IjE0Ii byeD0iMSIvPjwvc3ZnPg==" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                100: "#e0f2fe",
+                600: "#0284c7",
+                700: "#0369a1",
+              },
+              secondary: "#4B5DFF",
+              sky: {
+                100: "#e0f2fe",
+                200: "#bae6fd",
+                600: "#0284c7",
+                700: "#0369a1",
+              },
+              slate: {
+                900: "#0f172a",
+              },
+            },
+          },
+          fontFamily: {
+            sans: ["Nunito", "sans-serif"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-sans transition-colors duration-200">
+    <div class="flex h-screen">
+      <aside id="sidebar" class="sidebar w-64 bg-white dark:bg-slate-800 border-r border-slate-200 dark:border-slate-700 p-4 fixed h-full z-30 md:relative md:translate-x-0">
+        <div class="text-xl font-semibold mb-6 flex items-center">
+          <i data-lucide="layout-template" stroke-width="2.3" class="text-sky-600 dark:text-sky-100 w-5 h-5 mb-0.5 mr-1"></i>
+          Form<span class="text-sky-600 mr-1">mY</span>
+        </div>
+        <nav>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+                <i data-lucide="book-open" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+                Documentation
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm text-sky-600 dark:text-sky-200 bg-sky-100 dark:bg-slate-700">
+                <i data-lucide="notebook-pen" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+                Form Builder
+              </a>
+            </li>
+            <li>
+              <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 text-sm">
+                <i data-lucide="bot" class="text-sky-600 dark:text-sky-100 w-4 h-4 mb-1 mr-1 inline"></i>
+                AI Assistant
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="flex-1 flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900">
+        <header class="sticky top-0 z-10 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 p-3 flex justify-between items-center">
+          <button id="sidebar-toggle" class="md:hidden">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+          <h2 class="text-base font-semibold">Form Builder</h2>
+          <div class="flex items-center space-x-2">
+            <button id="import-btn" class="text-xs bg-sky-600 hover:bg-sky-700 text-white py-1 px-4 rounded-lg">Import</button>
+            <button id="export-btn" class="text-xs bg-sky-600 hover:bg-sky-700 text-white py-1 px-4 rounded-lg hidden">Export</button>
+            <button id="copy-html-btn" class="text-xs bg-sky-600 hover:bg-sky-700 text-white py-1 px-4 rounded-lg hidden">Copy HTML</button>
+            <button id="data-btn" class="text-xs bg-sky-600 hover:bg-sky-700 text-white py-1 px-4 rounded-lg hidden">Data</button>
+            <button id="dark-mode-toggle">
+              <i data-lucide="sun" class="w-5 h-5 ms-2"></i>
+            </button>
+          </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+          <div id="documentation" class="max-w-3xl mx-auto mt-8">
+            <h1 class="text-2xl font-bold mb-4">Form Builder Documentation</h1>
+            <p class="mb-4">Welcome to the Form Builder. To get started, import a JSON file with your form structure.</p>
+            <h2 class="text-xl font-semibold mb-2">How to use:</h2>
+            <ol class="list-decimal list-inside mb-4">
+              <li>Click the "Import" button in the top right corner</li>
+              <li>Select a JSON file with your form structure</li>
+              <li>The form will be rendered based on the imported data</li>
+              <li>Fill out the form as needed</li>
+              <li>Click "Export" to save your form data</li>
+            </ol>
+            <div>
+              <h2 class="text-xl font-semibold mb-2">Example:</h2>
+              <code>
+                <pre class="p-2 rounded-lg bg-slate-800 text-slate-200 text-xs">
+[
+  {
+    "id": "text-field",
+    "type": "text",
+    "name": "Text Input",
+    "placeholder": "Enter text",
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "number",
+    "type": "number",
+    "name": "Number Input",
+    "placeholder": "25",
+    "width": "w-1/2",
+    "value": "15"
+  },
+  {
+    "id": "select-field",
+    "type": "select",
+    "name": "Select Option",
+    "options": [
+      {
+        "value": "option1",
+        "label": "Option 1"
+      },
+      {
+        "value": "option2",
+        "label": "Option 2"
+      },
+      {
+        "value": "option3",
+        "label": "Option 3"
+      }
+    ],
+    "width": "w-full",
+    "value": "option2",
+    "nestedFields": {
+      "option3": [
+        {
+          "id": "option3_child",
+          "type": "textarea",
+          "name": "TextArea long text",
+          "width": "w-full"
+        }
+      ]
+    }
+  },
+  {
+    "id": "keywords-field",
+    "type": "tags",
+    "name": "Keywords",
+    "placeholder": "Enter keywords",
+    "width": "w-full",
+    "value": ["keyword1","keyword 2","keyword 3"]
+  },
+  {
+    "id": "textarea-field",
+    "type": "textarea",
+    "name": "Text Area",
+    "placeholder": "Enter long text",
+    "width": "w-full",
+    "value": ""
+  }
+]</pre>
+              </code>
+            </div>
+          </div>
+          <div id="form-container" class="max-w-full mx-auto mt-8 hidden">
+            <div class="p-6">
+              <div id="form-fields" class="flex flex-wrap -mx-2"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        lucide.createIcons();
+        const formFields = document.getElementById("form-fields");
+        const formContainer = document.getElementById("form-container");
+        const documentation = document.getElementById("documentation");
+        let fields = [];
+
+        function createNestedFields(nestedFields) {
+          const container = document.createElement("div");
+          container.classList.add("nested-fields", "ml-4", "mt-4");
+
+          nestedFields.forEach((field) => {
+            const fieldElement = createField(field);
+            container.appendChild(fieldElement);
+          });
+
+          return container;
+        }
+
+        function createField(field) {
+          const fieldContainer = document.createElement("div");
+          fieldContainer.classList.add("mb-4", field.width || "w-full", "inline-block", "align-top", "px-2");
+
+          const label = document.createElement("label");
+          label.setAttribute("for", field.id);
+          label.classList.add("block", "mb-2", "text-sm", "font-medium");
+          label.textContent = field.name;
+          fieldContainer.appendChild(label);
+
+          let input;
+
+          switch (field.type) {
+            case "tags":
+              input = document.createElement("div");
+              input.id = field.id;
+              input.classList.add("flex", "flex-wrap", "items-center", "px-1", "py-1", "border", "dark:border-slate-700", "rounded-lg", "text-sm", "bg-white", "dark:bg-slate-800", "dark:text-white", "outline-none");
+              const tagInput = document.createElement("input");
+              tagInput.type = "text";
+              tagInput.classList.add("flex-grow", "outline-none", "bg-transparent", "dark:text-white");
+              tagInput.placeholder = field.placeholder || "Enter tags";
+              input.appendChild(tagInput);
+              setupTagsField(input, tagInput, field.value);
+              break;
+            case "select":
+              input = document.createElement("select");
+              input.id = field.id;
+              input.classList.add("w-full", "p-2", "border", "rounded-lg", "text-sm", "bg-white", "dark:bg-slate-800", "dark:text-white", "dark:border-slate-700");
+              if (field.options) {
+                field.options.forEach((option) => {
+                  const optionElement = document.createElement("option");
+                  optionElement.value = option.value;
+                  optionElement.textContent = option.label;
+                  input.appendChild(optionElement);
+                });
+              }
+
+              if (field.nestedFields) {
+                input.addEventListener("change", (e) => {
+                  const selectedValue = e.target.value;
+                  const existingNestedFields = fieldContainer.querySelector(".nested-fields");
+                  if (existingNestedFields) {
+                    existingNestedFields.remove();
+                  }
+                  if (field.nestedFields[selectedValue]) {
+                    const nestedFieldsContainer = createNestedFields(field.nestedFields[selectedValue]);
+                    fieldContainer.appendChild(nestedFieldsContainer);
+                  }
+                });
+              }
+              break;
+            case "textarea":
+              input = document.createElement("textarea");
+              input.id = field.id;
+              input.classList.add("w-full", "p-2", "border", "rounded-lg", "text-sm", "bg-white", "dark:bg-slate-800", "dark:text-white", "dark:border-slate-700");
+              input.rows = 3;
+              break;
+            case "number":
+              input = document.createElement("input");
+              input.type = "number";
+              input.id = field.id;
+              input.classList.add("w-full", "p-2", "border", "rounded-lg", "text-sm", "bg-white", "dark:bg-slate-800", "dark:text-white", "dark:border-slate-700");
+              break;
+            default:
+              input = document.createElement("input");
+              input.type = "text";
+              input.id = field.id;
+              input.classList.add("w-full", "p-2", "border", "rounded-lg", "text-sm", "bg-white", "dark:bg-slate-800", "dark:text-white", "dark:border-slate-700");
+          }
+
+          if (field.placeholder) input.placeholder = field.placeholder;
+          if (field.value) input.value = field.value;
+
+          fieldContainer.appendChild(input);
+          return fieldContainer;
+        }
+
+        function setupTagsField(container, input, initialTags) {
+          const tags = [];
+
+          if (Array.isArray(initialTags)) {
+            initialTags.forEach((tag) => addTag(tag, input));
+          }
+
+          container.addEventListener("click", () => input.focus());
+
+          input.addEventListener("keydown", (e) => {
+            if (e.key === "," || e.key === "Enter") {
+              e.preventDefault();
+              const tag = input.value.trim();
+              if (tag && !tags.includes(tag)) {
+                addTag(tag, input);
+                input.value = "";
+              }
+            }
+          });
+
+          function addTag(tag, inputElement) {
+            if (!tags.includes(tag)) {
+              tags.push(tag);
+              const tagElement = document.createElement("span");
+              tagElement.classList.add("inline-block", "bg-sky-100", "text-sky-600", "px-2", "py-1", "rounded", "text-xs", "dark:text-slate-200", "dark:bg-slate-700", "mx-1", "my-1");
+              tagElement.innerHTML = `${tag}<span class="ml-2 cursor-pointer">&times;</span>`;
+              tagElement.querySelector("span").addEventListener("click", () => removeTag(tagElement, tag));
+              container.insertBefore(tagElement, inputElement);
+            }
+          }
+
+          function removeTag(tagElement, tag) {
+            tagElement.remove();
+            const index = tags.indexOf(tag);
+            if (index > -1) {
+              tags.splice(index, 1);
+            }
+          }
+        }
+
+        function getTagsFromField(fieldId) {
+          const container = document.getElementById(fieldId);
+          const tagElements = container.querySelectorAll("span.inline-block");
+          return Array.from(tagElements).map((el) => el.textContent.replace("×", "").trim());
+        }
+
+        function importFields(jsonData) {
+          fields = JSON.parse(jsonData);
+          formFields.innerHTML = "";
+          fields.forEach((field) => {
+            const fieldElement = createField(field);
+            formFields.appendChild(fieldElement);
+          });
+          documentation.classList.add("hidden");
+          formContainer.classList.remove("hidden");
+
+          const exportBtn = document.getElementById("export-btn");
+          const copyHTMLBtn = document.getElementById("copy-html-btn");
+          const dataBtn = document.getElementById("data-btn");
+          if (exportBtn) exportBtn.classList.remove("hidden");
+          if (copyHTMLBtn) copyHTMLBtn.classList.remove("hidden");
+          if (dataBtn) dataBtn.classList.remove("hidden");
+        }
+
+        function generateDataJSON() {
+          function processFields(fields, container = document) {
+            const dataObject = {};
+            fields.forEach((field) => {
+              let value;
+              const element = container.querySelector(`#${field.id}`);
+              if (field.type === "tags") {
+                value = getTagsFromField(field.id);
+              } else if (element) {
+                value = element.value;
+              }
+
+              if (value && (Array.isArray(value) ? value.length > 0 : value.trim() !== "")) {
+                dataObject[field.id] = value;
+              }
+
+              if (field.type === "select" && field.nestedFields) {
+                const selectedValue = element.value;
+                if (field.nestedFields[selectedValue]) {
+                  const nestedContainer = element.closest(".mb-4").querySelector(".nested-fields");
+                  if (nestedContainer) {
+                    const nestedData = processFields(field.nestedFields[selectedValue], nestedContainer);
+                    Object.assign(dataObject, nestedData);
+                  }
+                }
+              }
+            });
+            return dataObject;
+          }
+
+          const dataObject = processFields(fields);
+          return JSON.stringify(dataObject, null, 2);
+        }
+
+        document.getElementById("import-btn").addEventListener("click", () => {
+          const input = document.createElement("input");
+          input.type = "file";
+          input.accept = ".json";
+          input.onchange = (event) => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              try {
+                importFields(e.target.result);
+                alert("Form imported successfully!");
+              } catch (error) {
+                console.error("Error parsing imported data:", error);
+                alert("Error importing form. Please check the file format.");
+              }
+            };
+            reader.readAsText(file);
+          };
+          input.click();
+        });
+
+        document.getElementById("export-btn").addEventListener("click", () => {
+          if (fields.length === 0) {
+            alert("Please import a form before exporting.");
+            return;
+          }
+          const jsonString = JSON.stringify(fields, null, 2);
+          const blob = new Blob([jsonString], { type: "application/json" });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "formmY_export.json";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+
+        const dataBtn = document.getElementById("data-btn");
+        if (dataBtn) {
+          dataBtn.addEventListener("click", () => {
+            const dataJSON = generateDataJSON();
+            const blob = new Blob([dataJSON], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "formData.json";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          });
+        }
+
+        document.getElementById("copy-html-btn").addEventListener("click", () => {
+          const formHTML = document.getElementById("form-fields").outerHTML;
+          navigator.clipboard
+            .writeText(formHTML)
+            .then(() => {
+              alert("Form HTML copied to clipboard!");
+            })
+            .catch((err) => {
+              console.error("Failed to copy HTML: ", err);
+              alert("Failed to copy HTML. Please try again.");
+            });
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        const htmlElement = document.documentElement;
+
+        function updateDarkMode(isDark) {
+          if (isDark) {
+            htmlElement.classList.add("dark");
+          } else {
+            htmlElement.classList.remove("dark");
+          }
+          localStorage.setItem("darkMode", isDark);
+
+          if (darkModeToggle) {
+            const darkModeIcon = darkModeToggle.querySelector("i");
+            if (darkModeIcon) {
+              darkModeIcon.setAttribute("data-lucide", isDark ? "moon" : "sun");
+              lucide.createIcons();
+            }
+          }
+        }
+
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener("click", () => {
+            const isDark = !htmlElement.classList.contains("dark");
+            updateDarkMode(isDark);
+          });
+        }
+
+        const savedDarkMode = localStorage.getItem("darkMode");
+        const systemDarkMode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (savedDarkMode === null) {
+          updateDarkMode(systemDarkMode);
+        } else {
+          updateDarkMode(savedDarkMode === "true");
+        }
+      });
+    </script>
+  </body>
+</html>
