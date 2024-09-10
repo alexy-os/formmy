@@ -1,0 +1,454 @@
+[
+  {
+    "id": "role-field",
+    "type": "select",
+    "name": "Role",
+    "options": [
+      {"value": "advisor", "label": "Advisor"},
+      {"value": "editor", "label": "Editor"},
+      {"value": "writer", "label": "Writer"},
+      {"value": "researcher", "label": "Researcher"},
+      {"value": "translator", "label": "Translator"},
+      {"value": "summarizer", "label": "Summarizer"},
+      {"value": "analyst", "label": "Analyst"},
+      {"value": "instructor", "label": "Instructor"},
+      {"value": "coder", "label": "Coder"},
+      {"value": "naming", "label": "Naming"}
+    ],
+    "width": "w-full",
+    "value": "",
+    "nestedFields": {
+      "advisor": [
+        {"id": "problemDescription", "type": "textarea", "name": "Problem Description", "width": "w-full"},
+        {"id": "contextInformation", "type": "textarea", "name": "Context Information", "width": "w-full"},
+        {"id": "desiredOutcome", "type": "textarea", "name": "Desired Outcome", "width": "w-full"},
+        {"id": "constraintsAndLimitations", "type": "tags", "name": "Constraints and Limitations", "width": "w-full"},
+        {"id": "previousAttempts", "type": "textarea", "name": "Previous Attempts", "width": "w-full"},
+        {"id": "relevantExperience", "type": "textarea", "name": "Relevant Experience", "width": "w-full"},
+        {"id": "timeframe", "type": "text", "name": "Timeframe", "width": "w-1/2"},
+        {"id": "riskTolerance", "type": "select", "name": "Risk Tolerance", "width": "w-1/2", "options": [
+          {"value": "low", "label": "Low"},
+          {"value": "medium", "label": "Medium"},
+          {"value": "high", "label": "High"}
+        ]},
+        {"id": "budgetConsiderations", "type": "textarea", "name": "Budget Considerations", "width": "w-full"},
+        {"id": "stakeholders", "type": "tags", "name": "Stakeholders", "width": "w-full"}
+      ],
+      "editor": [
+        {"id": "inputText", "type": "textarea", "name": "Input Text", "width": "w-full"},
+        {"id": "editingType", "type": "select", "name": "Editing Type", "width": "w-1/2", "options": [
+          {"value": "copyedit", "label": "Copy Edit"},
+          {"value": "proofread", "label": "Proofread"},
+          {"value": "developmental", "label": "Developmental"}
+        ]},
+        {"id": "grammarRules", "type": "tags", "name": "Grammar Rules", "width": "w-full"},
+        {"id": "styleguide", "type": "textarea", "name": "Style Guide", "width": "w-full"},
+        {"id": "targetReadability", "type": "select", "name": "Target Readability", "width": "w-1/2", "options": [
+          {"value": "elementary", "label": "Elementary"},
+          {"value": "intermediate", "label": "Intermediate"},
+          {"value": "advanced", "label": "Advanced"}
+        ]},
+        {"id": "preserveOriginalMeaning", "type": "select", "name": "Preserve Original Meaning", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]},
+        {"id": "focusAreas", "type": "tags", "name": "Focus Areas", "width": "w-full"},
+        {"id": "formatting", "type": "textarea", "name": "Formatting", "width": "w-full"},
+        {"id": "citations", "type": "select", "name": "Citations", "width": "w-1/2", "options": [
+          {"value": "apa", "label": "APA"},
+          {"value": "mla", "label": "MLA"},
+          {"value": "chicago", "label": "Chicago"}
+        ]},
+        {"id": "languageVariant", "type": "select", "name": "Language Variant", "width": "w-1/2", "options": [
+          {"value": "us", "label": "US English"},
+          {"value": "uk", "label": "UK English"},
+          {"value": "au", "label": "Australian English"}
+        ]}
+      ],
+      "writer": [
+        {"id": "topic", "type": "text", "name": "Topic", "width": "w-full"},
+        {"id": "genre", "type": "text", "name": "Genre", "width": "w-1/2"},
+        {"id": "plotElements", "type": "tags", "name": "Plot Elements", "width": "w-full"},
+        {"id": "characterDescriptions", "type": "textarea", "name": "Character Descriptions", "width": "w-full"},
+        {"id": "setting", "type": "textarea", "name": "Setting", "width": "w-full"},
+        {"id": "narrativeStyle", "type": "select", "name": "Narrative Style", "width": "w-1/2", "options": [
+          {"value": "firstPerson", "label": "First Person"},
+          {"value": "thirdPerson", "label": "Third Person"},
+          {"value": "omniscient", "label": "Omniscient"}
+        ]},
+        {"id": "themeAndMotifs", "type": "tags", "name": "Theme and Motifs", "width": "w-full"},
+        {"id": "conflictType", "type": "select", "name": "Conflict Type", "width": "w-1/2", "options": [
+          {"value": "manVsMan", "label": "Man vs Man"},
+          {"value": "manVsNature", "label": "Man vs Nature"},
+          {"value": "manVsSelf", "label": "Man vs Self"}
+        ]},
+        {"id": "desiredLength", "type": "number", "name": "Desired Length (words)", "width": "w-1/2"},
+        {"id": "targetEmotion", "type": "text", "name": "Target Emotion", "width": "w-1/2"}
+      ],
+      "researcher": [
+        {"id": "researchQuestion", "type": "textarea", "name": "Research Question", "width": "w-full"},
+        {"id": "fieldOfStudy", "type": "text", "name": "Field of Study", "width": "w-1/2"},
+        {"id": "methodologyPreference", "type": "select", "name": "Methodology Preference", "width": "w-1/2", "options": [
+          {"value": "qualitative", "label": "Qualitative"},
+          {"value": "quantitative", "label": "Quantitative"},
+          {"value": "mixedMethods", "label": "Mixed Methods"}
+        ]},
+        {"id": "dataSourcesRequired", "type": "tags", "name": "Data Sources Required", "width": "w-full"},
+        {"id": "timePeriod", "type": "text", "name": "Time Period", "width": "w-1/2"},
+        {"id": "geographicalFocus", "type": "text", "name": "Geographical Focus", "width": "w-1/2"},
+        {"id": "requiredDepth", "type": "select", "name": "Required Depth", "width": "w-1/2", "options": [
+          {"value": "overview", "label": "Overview"},
+          {"value": "detailed", "label": "Detailed"},
+          {"value": "comprehensive", "label": "Comprehensive"}
+        ]},
+        {"id": "interdisciplinaryAspects", "type": "tags", "name": "Interdisciplinary Aspects", "width": "w-full"},
+        {"id": "ethicalConsiderations", "type": "textarea", "name": "Ethical Considerations", "width": "w-full"},
+        {"id": "expectedDeliverables", "type": "tags", "name": "Expected Deliverables", "width": "w-full"}
+      ],
+      "translator": [
+        {"id": "sourceLanguage", "type": "text", "name": "Source Language", "width": "w-1/2"},
+        {"id": "targetLanguage", "type": "text", "name": "Target Language", "width": "w-1/2"},
+        {"id": "textToTranslate", "type": "textarea", "name": "Text to Translate", "width": "w-full"},
+        {"id": "preserveFormatting", "type": "select", "name": "Preserve Formatting", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]},
+        {"id": "culturalAdaptation", "type": "select", "name": "Cultural Adaptation", "width": "w-1/2", "options": [
+          {"value": "literal", "label": "Literal"},
+          {"value": "adapted", "label": "Adapted"}
+        ]},
+        {"id": "technicalTerminology", "type": "tags", "name": "Technical Terminology", "width": "w-full"},
+        {"id": "tonePreservation", "type": "select", "name": "Tone Preservation", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]},
+        {"id": "idiomHandling", "type": "select", "name": "Idiom Handling", "width": "w-1/2", "options": [
+          {"value": "literal", "label": "Literal"},
+          {"value": "equivalent", "label": "Find Equivalent"}
+        ]},
+        {"id": "targetDialect", "type": "text", "name": "Target Dialect", "width": "w-1/2"},
+        {"id": "purposeOfTranslation", "type": "text", "name": "Purpose of Translation", "width": "w-1/2"}
+      ],
+      "summarizer": [
+        {"id": "textToSummarize", "type": "textarea", "name": "Text to Summarize", "width": "w-full"},
+        {"id": "desiredLength", "type": "number", "name": "Desired Length (words)", "width": "w-1/2"},
+        {"id": "focusAreas", "type": "tags", "name": "Focus Areas", "width": "w-full"},
+        {"id": "excludedTopics", "type": "tags", "name": "Excluded Topics", "width": "w-full"},
+        {"id": "summaryStyle", "type": "select", "name": "Summary Style", "width": "w-1/2", "options": [
+          {"value": "descriptive", "label": "Descriptive"},
+          {"value": "informative", "label": "Informative"},
+          {"value": "evaluative", "label": "Evaluative"}
+        ]},
+        {"id": "targetAudience", "type": "text", "name": "Target Audience", "width": "w-1/2"},
+        {"id": "keyPointsToInclude", "type": "tags", "name": "Key Points to Include", "width": "w-full"},
+        {"id": "contextPreservation", "type": "select", "name": "Context Preservation", "width": "w-1/2", "options": [
+          {"value": "high", "label": "High"},
+          {"value": "medium", "label": "Medium"},
+          {"value": "low", "label": "Low"}
+        ]},
+        {"id": "technicalityLevel", "type": "select", "name": "Technicality Level", "width": "w-1/2", "options": [
+          {"value": "layman", "label": "Layman"},
+          {"value": "intermediate", "label": "Intermediate"},
+          {"value": "expert", "label": "Expert"}
+        ]},
+        {"id": "visualElementInclusion", "type": "select", "name": "Visual Element Inclusion", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]}
+      ],
+      "analyst": [
+        {"id": "dataSet", "type": "textarea", "name": "Data Set", "width": "w-full"},
+        {"id": "analysisObjective", "type": "textarea", "name": "Analysis Objective", "width": "w-full"},
+        {"id": "requiredMetrics", "type": "tags", "name": "Required Metrics", "width": "w-full"},
+        {"id": "comparisonPoints", "type": "tags", "name": "Comparison Points", "width": "w-full"},
+        {"id": "trendIdentification", "type": "select", "name": "Trend Identification", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]},
+        {"id": "outlierDetection", "type": "select", "name": "Outlier Detection", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]},
+        {"id": "confidenceLevel", "type": "number", "name": "Confidence Level (%)", "width": "w-1/2"},
+        {"id": "visualizationPreferences", "type": "tags", "name": "Visualization Preferences", "width": "w-full"},
+        {"id": "hypothesisToTest", "type": "textarea", "name": "Hypothesis to Test", "width": "w-full"},
+        {"id": "predictiveModeling", "type": "select", "name": "Predictive Modeling", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]}
+      ],
+      "instructor": [
+        {"id": "subjectMatter", "type": "text", "name": "Subject Matter", "width": "w-full"},
+        {"id": "learningObjectives", "type": "tags", "name": "Learning Objectives", "width": "w-full"},
+        {"id": "targetAgeGroup", "type": "text", "name": "Target Age Group", "width": "w-1/2"},
+        {"id": "prerequisiteKnowledge", "type": "textarea", "name": "Prerequisite Knowledge", "width": "w-full"},
+        {"id": "teachingMethodology", "type": "select", "name": "Teaching Methodology", "width": "w-1/2", "options": [
+          {"value": "lectureBased", "label": "Lecture-based"},
+          {"value": "interactive", "label": "Interactive"},
+          {"value": "projectBased", "label": "Project-based"}
+        ]},
+        {"id": "assessmentCriteria", "type": "textarea", "name": "Assessment Criteria", "width": "w-full"},
+        {"id": "lessonDuration", "type": "number", "name": "Lesson Duration (minutes)", "width": "w-1/2"},
+        {"id": "interactivityLevel", "type": "select", "name": "Interactivity Level", "width": "w-1/2", "options": [
+          {"value": "low", "label": "Low"},
+          {"value": "medium", "label": "Medium"},
+          {"value": "high", "label": "High"}
+        ]},
+        {"id": "resourcesAvailable", "type": "tags", "name": "Resources Available", "width": "w-full"},
+        {"id": "accommodations", "type": "textarea", "name": "Accommodations", "width": "w-full"}
+      ],
+      "coder": [
+        {"id": "programmingLanguage", "type": "text", "name": "Programming Language", "width": "w-1/2"},
+        {"id": "taskDescription", "type": "textarea", "name": "Task Description", "width": "w-full"},
+        {"id": "inputOutputExamples", "type": "textarea", "name": "Input/Output Examples", "width": "w-full"},
+        {"id": "performanceRequirements", "type": "textarea", "name": "Performance Requirements", "width": "w-full"},
+        {"id": "codeStyle", "type": "select", "name": "Code Style", "width": "w-1/2", "options": [
+          {"value": "functional", "label": "Functional"},
+          {"value": "objectOriented", "label": "Object-Oriented"},
+          {"value": "procedural", "label": "Procedural"}
+        ]},
+        {"id": "errorHandling", "type": "select", "name": "Error Handling", "width": "w-1/2", "options": [
+          {"value": "trycatch", "label": "Try-Catch"},
+          {"value": "errorCodes", "label": "Error Codes"},
+          {"value": "assertions", "label": "Assertions"}
+        ]},
+        {"id": "compatibilityRequirements", "type": "tags", "name": "Compatibility Requirements", "width": "w-full"},
+        {"id": "securityConsiderations", "type": "textarea", "name": "Security Considerations", "width": "w-full"},
+        {"id": "librariesAndFrameworks", "type": "tags", "name": "Libraries and Frameworks", "width": "w-full"},
+        {"id": "documentationLevel", "type": "select", "name": "Documentation Level", "width": "w-1/2", "options": [
+          {"value": "minimal", "label": "Minimal"},
+          {"value": "standard", "label": "Standard"},
+          {"value": "comprehensive", "label": "Comprehensive"}
+        ]}
+      ],
+      "naming": [
+        {"id": "productDescription", "type": "textarea", "name": "Product Description", "width": "w-full"},
+        {"id": "targetAudience", "type": "text", "name": "Target Audience", "width": "w-1/2"},
+        {"id": "industryContext", "type": "text", "name": "Industry Context", "width": "w-1/2"},
+        {"id": "brandIdentity", "type": "textarea", "name": "Brand Identity", "width": "w-full"},
+        {"id": "languagePreferences", "type": "tags", "name": "Language Preferences", "width": "w-full"},
+        {"id": "characterLimit", "type": "number", "name": "Character Limit", "width": "w-1/2"},
+        {"id": "culturalConsiderations", "type": "textarea", "name": "Cultural Considerations", "width": "w-full"},
+        {"id": "competitors", "type": "tags", "name": "Competitors", "width": "w-full"},
+        {"id": "futureScalability", "type": "select", "name": "Future Scalability", "width": "w-1/2", "options": [
+          {"value": "local", "label": "Local"},
+          {"value": "national", "label": "National"},
+          {"value": "global", "label": "Global"}
+        ]},
+        {"id": "trademark", "type": "select", "name": "Trademark Considerations", "width": "w-1/2", "options": [
+          {"value": "true", "label": "Yes"},
+          {"value": "false", "label": "No"}
+        ]}
+      ]
+    }
+  },
+  {
+    "id": "main-task-field",
+    "type": "textarea",
+    "name": "Main Task",
+    "placeholder": "Describe the main task",
+    "width": "w-full",
+    "value": ""
+  },
+  {
+    "id": "process-steps-field",
+    "type": "tags",
+    "name": "Process Steps",
+    "placeholder": "Enter process steps",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "expertise-field",
+    "type": "tags",
+    "name": "Expertise",
+    "placeholder": "Enter required expertise",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "response-requirements-field",
+    "type": "tags",
+    "name": "Response Requirements",
+    "placeholder": "Enter response requirements",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "output-format-field",
+    "type": "select",
+    "name": "Output Format",
+    "options": [
+      {"value": "text", "label": "Text"},
+      {"value": "json", "label": "JSON"},
+      {"value": "html", "label": "HTML"},
+      {"value": "markdown", "label": "Markdown"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "creativity-level-field",
+    "type": "select",
+    "name": "Creativity Level",
+    "options": [
+      {"value": "1", "label": "1"},
+      {"value": "2", "label": "2"},
+      {"value": "3", "label": "3"},
+      {"value": "4", "label": "4"},
+      {"value": "5", "label": "5"},
+      {"value": "6", "label": "6"},
+      {"value": "7", "label": "7"},
+      {"value": "8", "label": "8"},
+      {"value": "9", "label": "9"},
+      {"value": "10", "label": "10"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "keywords-field",
+    "type": "tags",
+    "name": "Keywords",
+    "placeholder": "Enter keywords",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "type-field",
+    "type": "text",
+    "name": "Type",
+    "placeholder": "Enter type",
+    "width": "w-1/3",
+    "value": ""
+  },
+  {
+    "id": "tone-field",
+    "type": "text",
+    "name": "Tone",
+    "placeholder": "Enter tone",
+    "width": "w-1/3",
+    "value": ""
+  },
+  {
+    "id": "word-count-field",
+    "type": "number",
+    "name": "Word Count",
+    "placeholder": "Enter word count",
+    "width": "w-1/3",
+    "value": ""
+  },
+  {
+    "id": "style-field",
+    "type": "text",
+    "name": "Style",
+    "placeholder": "Enter style",
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "audience-field",
+    "type": "text",
+    "name": "Audience",
+    "placeholder": "Enter target audience",
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "goal-field",
+    "type": "textarea",
+    "name": "Goal",
+    "placeholder": "Enter the goal",
+    "width": "w-full",
+    "value": ""
+  },
+  {
+    "id": "ethical-considerations-field",
+    "type": "tags",
+    "name": "Ethical Considerations",
+    "placeholder": "Enter ethical considerations",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "confidentiality-level-field",
+    "type": "select",
+    "name": "Confidentiality Level",
+    "options": [
+      {"value": "public", "label": "Public"},
+      {"value": "internal", "label": "Internal"},
+      {"value": "confidential", "label": "Confidential"},
+      {"value": "secret", "label": "Secret"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "iteration-guidelines-field",
+    "type": "textarea",
+    "name": "Iteration Guidelines",
+    "placeholder": "Enter iteration guidelines",
+    "width": "w-full",
+    "value": ""
+  },
+  {
+    "id": "fallback-options-field",
+    "type": "tags",
+    "name": "Fallback Options",
+    "placeholder": "Enter fallback options",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "cross-domain-relevance-field",
+    "type": "tags",
+    "name": "Cross-Domain Relevance",
+    "placeholder": "Enter cross-domain relevance",
+    "width": "w-full",
+    "value": []
+  },
+  {
+    "id": "expected-output-quality-field",
+    "type": "select",
+    "name": "Expected Output Quality",
+    "options": [
+      {"value": "draft", "label": "Draft"},
+      {"value": "good", "label": "Good"},
+      {"value": "excellent", "label": "Excellent"},
+      {"value": "perfect", "label": "Perfect"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "time-constraints-field",
+    "type": "text",
+    "name": "Time Constraints",
+    "placeholder": "Enter time constraints",
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "source-citation-field",
+    "type": "select",
+    "name": "Source Citation",
+    "options": [
+      {"value": "true", "label": "Required"},
+      {"value": "false", "label": "Not Required"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "adaptability-level-field",
+    "type": "select",
+    "name": "Adaptability Level",
+    "options": [
+      {"value": "low", "label": "Low"},
+      {"value": "medium", "label": "Medium"},
+      {"value": "high", "label": "High"}
+    ],
+    "width": "w-1/2",
+    "value": ""
+  }
+]

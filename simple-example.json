@@ -1,0 +1,65 @@
+[
+  {
+    "id": "text-field",
+    "type": "text",
+    "name": "Text Input",
+    "placeholder": "Enter text",
+    "width": "w-1/2",
+    "value": ""
+  },
+  {
+    "id": "number",
+    "type": "number",
+    "name": "Number Input",
+    "placeholder": "25",
+    "width": "w-1/2",
+    "value": "15"
+  },
+  {
+    "id": "select-field",
+    "type": "select",
+    "name": "Select Option",
+    "options": [
+      {
+        "value": "option1",
+        "label": "Option 1"
+      },
+      {
+        "value": "option2",
+        "label": "Option 2"
+      },
+      {
+        "value": "option3",
+        "label": "Option 3"
+      }
+    ],
+    "width": "w-full",
+    "value": "option2",
+    "nestedFields": {
+      "option3": [
+        {
+          "id": "option3_child",
+          "type": "textarea",
+          "name": "TextArea long text",
+          "width": "w-full"
+        }
+      ]
+    }
+  },
+  {
+    "id": "keywords-field",
+    "type": "tags",
+    "name": "Keywords",
+    "placeholder": "Enter keywords",
+    "width": "w-full",
+    "value": ["keyword1","keyword 2","keyword 3"]
+  },
+  {
+    "id": "textarea-field",
+    "type": "textarea",
+    "name": "Text Area",
+    "placeholder": "Enter long text",
+    "width": "w-full",
+    "value": ""
+  }
+]
